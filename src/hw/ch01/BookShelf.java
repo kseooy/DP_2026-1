@@ -1,10 +1,9 @@
-package practice.ch01;
+package hw.ch01;
 
 import java.util.Iterator;
 
 public class BookShelf implements Iterable<Book> {
-// public class BookShelf {
-    private final Book[] books;
+    private Book[] books;
     private int last = 0;
 
     public BookShelf(int maxsize) {
@@ -24,10 +23,18 @@ public class BookShelf implements Iterable<Book> {
         return last;
     }
 
-    
     @Override
     public Iterator<Book> iterator() {
-        return new BookShelfIterator(this); //인자를 현재 책꽂이 자신을 넘겨 줌 
+        return new BookShelfIterator(this);
     }
-    
+
+    // ⭐ Step3: 장르 필터 Iterator 반환 메서드
+    public Iterator<Book> iteratorByGenre(String genre) {
+        return new BookShelfGenreIterator(this, genre);
+    }
+
+    // ⭐ Step3: 연도 역순 Iterator 반환 메서드
+    public Iterator<Book> iteratorByYear() {
+        return new BookShelfYearIterator(this);
+    }
 }
