@@ -5,7 +5,7 @@ import ch04.A2.framework.Factory;
 import ch04.A2.framework.Product;
 
 public class IDCardFactory extends Factory {
-    private int serial = 100;
+    private int serial = 100; // 시리얼 번호 관리
 
     protected synchronized Product createProduct(String owner) {
         return new IDCard(owner, serial++);
