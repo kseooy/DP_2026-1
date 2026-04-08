@@ -1,4 +1,4 @@
-package practice.ch06.freamework;
+package practice.ch06.framework;
 
 public interface Product extends Cloneable { // Cloneable 인터페이스를 구현하는 클래스만 Clone 사용 가능
     public abstract void use(String s);
