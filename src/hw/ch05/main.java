@@ -3,6 +3,7 @@ package hw.ch05;
 public class main {
     public static void main(String[] args) {
 
+        // [2-1] Static Initializer 테스트
         System.out.println("========== 방식 1: Static Initializer ==========");
         LoggerStaticInit logger1a = LoggerStaticInit.getInstance();
         LoggerStaticInit logger1b = LoggerStaticInit.getInstance();
@@ -13,9 +14,10 @@ public class main {
         } else {
             System.out.println("X 다른 인스턴스");
         }
-        System.out.println("\n========== 로그 출력 1 ==========");
+        System.out.println("\n[LoggerStaticInit 로그]");
         System.out.println(logger1a.getLog());
 
+        // [2-2] Synchronized Lazy 테스트
         System.out.println("\n========== 방식 2: Synchronized Lazy ==========");
         LoggerSynchronizedLazy logger2a = LoggerSynchronizedLazy.getInstance();
         LoggerSynchronizedLazy logger2b = LoggerSynchronizedLazy.getInstance();
@@ -26,9 +28,10 @@ public class main {
         } else {
             System.out.println("X 다른 인스턴스");
         }
-        System.out.println("\n========== 로그 출력 2 ==========");
+        System.out.println("\n[LoggerSynchronizedLazy 로그]");
         System.out.println(logger2a.getLog());
 
+        // [2-3] Enum 테스트
         System.out.println("\n========== 방식 3: Enum (권장) ==========");
         LoggerEnum logger3a = LoggerEnum.INSTANCE;
         LoggerEnum logger3b = LoggerEnum.INSTANCE;
@@ -39,7 +42,7 @@ public class main {
         } else {
             System.out.println("X 다른 인스턴스");
         }
-        System.out.println("\n========== 로그 출력 3 ==========");
+        System.out.println("\n[LoggerEnum 로그]");
         System.out.println(logger3a.getLog());
     }
 }

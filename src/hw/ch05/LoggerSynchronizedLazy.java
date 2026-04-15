@@ -5,7 +5,7 @@ public class LoggerSynchronizedLazy {
     private StringBuilder logBuffer;
 
     private LoggerSynchronizedLazy() {
-        System.out.println("[LoggerSynchronizedLazy] 인스턴스를 생성했습니다.");
+        System.out.println("인스턴스를 생성했습니다.");
         logBuffer = new StringBuilder();
     }
 
@@ -17,9 +17,8 @@ public class LoggerSynchronizedLazy {
     }
 
     public void log(String message) {
-        logBuffer.append("[").append(System.currentTimeMillis()).append("] ")
-                 .append(message).append("\n");
-        System.out.println("[LoggerSynchronizedLazy] " + message);
+        logBuffer.append(message).append("\n");
+        System.out.println(message);
     }
 
     public String getLog() {

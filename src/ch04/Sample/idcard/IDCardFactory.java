@@ -14,3 +14,4 @@ public class IDCardFactory extends Factory {
         System.out.println(product + "을 등록했습니다.");
     }
 }
+
