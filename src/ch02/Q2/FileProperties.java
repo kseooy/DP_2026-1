@@ -1,2 +1,6 @@
 package ch02.Q2;
-// FileProperties 클래스를 구현해 보세요.
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+`
